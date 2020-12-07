@@ -1,15 +1,19 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3.0 + Vite" />
+  <router-view v-slot="{ Component }">
+    <transition>
+      <keep-alive>
+        <component :is="Component" />
+      </keep-alive>
+    </transition>
+  </router-view>
 </template>
-
-<script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+<style lang="less">
+/* 过渡暂没找到写法 */
+.transitionBody {
+  transition: 1s ease; /*定义动画的时间和过渡效果*/
 }
-</script>
+.slide-fade-enter,
+.slide-fade-leave-to {
+  opacity: 0;
+}
+</style>
