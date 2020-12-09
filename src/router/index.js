@@ -12,6 +12,11 @@ const routes = [
     name: "Other",
     component: load('Other')
   },
+  {
+    path: "/Todo",
+    name: "Todo",
+    component: load('Todo/Index')
+  },
 ];
 
 export default createRouter({

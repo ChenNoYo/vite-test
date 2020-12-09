@@ -20,7 +20,10 @@ import {
 } from 'vue-router'
 // 从 vuex 中导入 useStore 方法
 import { useStore } from 'vuex'
+import UButton from '../components/u-button.vue'
+import HelloWorld from '../components/HelloWorld.vue'
 export default {
+  components: { UButton, HelloWorld },
   render () {
     return h('div', [
       h('p', this.count),
@@ -30,6 +33,11 @@ export default {
       h('p', this.state2),
       h('button', { onClick: this.add2 }, '增加'),
       h('button', { onClick: this.goOther }, 'Other'),
+      h(UButton, {
+        onClick: this.comClick,
+        type: 'primary',
+        name: 'comClick'
+      }),
     ])
   },
   mounted () {
@@ -131,7 +139,12 @@ export default {
     function goOther () {
       router.push({ path: '/Other' })
     }
-    return { count, add, state1, state2, add1, add2, goOther }
+    function comClick () {
+      console.log('comClick')
+    }
+    return { count, add, state1, state2, add1, add2, goOther, comClick }
   },
 }
 </script>
+<style>
+</style>
