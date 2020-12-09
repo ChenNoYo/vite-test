@@ -2,7 +2,7 @@
  * @Descripttion: 
  * @Author: NoYo
  * @Date: 2020-12-09 14:07:21
- * @LastEditTime: 2020-12-09 14:18:08
+ * @LastEditTime: 2020-12-09 14:36:59
  */
 import {
   onMounted,
@@ -13,7 +13,7 @@ import {
   watchEffect,
   computed
 } from 'vue'
-export default function userFilter (todoState) {
+export default function (todoState) {
   const filters = {
     all (todos) {
       return todos

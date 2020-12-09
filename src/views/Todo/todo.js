@@ -2,7 +2,7 @@
  * @Descripttion: 
  * @Author: NoYo
  * @Date: 2020-12-09 14:02:09
- * @LastEditTime: 2020-12-09 14:24:29
+ * @LastEditTime: 2020-12-09 14:39:20
  */
 import {
   onMounted,
@@ -54,6 +54,6 @@ export default function () {
     storage.save(todoState.todos)
   })
   return {
-    ...toRefs(todoState), addTodo, removeTodo, editTodo, editDone, editCancal
+    todoState, addTodo, removeTodo, editTodo, editDone, editCancal
   }
 }
